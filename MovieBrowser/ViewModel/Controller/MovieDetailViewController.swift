@@ -20,9 +20,6 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var similarMovieCollectionView: UICollectionView!
     @IBOutlet weak var reviewCollectionView: UICollectionView!
     
-    
-    
-    
     @IBOutlet var releaseDateLabel: UILabel!
     @IBOutlet var languageLabel: UILabel!
     var player: AVPlayer!
@@ -38,12 +35,24 @@ class MovieDetailViewController: UIViewController {
     public var detailViewModel: DetailsViewModel!
     public var detailListViewModel: DetailListViewModel!
     
+    
     // MARK:- lifeCycle methods for the viewController
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupIU()
-        self.setVideoPlayerView()
+        
         self.setupViewModel()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.setVideoPlayerView()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        player?.pause()
+        player = nil
     }
     
     // MARK:- utility functions for the viewController
@@ -107,14 +116,21 @@ class MovieDetailViewController: UIViewController {
     }
     
     private func setVideoPlayerView() {
+        let videoURL = URL(string: "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
+        player = AVPlayer(url: videoURL!)
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.videoPlayerView.bounds
+        self.videoPlayerView.layer.addSublayer(playerLayer)
+        player?.play()
+        /*
         let movieURL = Constant.baseURL + "\(movieViewModel.id ?? 0)/videos?api_key=\(Constant.APIKey)"
-        
-        let url = URL(string:movieURL)
+        let url = URL(string:"https://www.youtube.com/watch?v=-rF2j6K5FoM")
         player = AVPlayer(url: url!)
         avpController.player = player
         avpController.view.frame.size.height = videoPlayerView.frame.size.height
         avpController.view.frame.size.width = videoPlayerView.frame.size.width
         self.videoPlayerView.addSubview(avpController.view)
+        */
     }
     
     
