@@ -326,17 +326,8 @@
 				8445B0B826A03D5500583F15 /* HomeTableCell.xib */,
 				8445B0B726A03D5500583F15 /* SimilarCollectionViewCell.swift */,
 				8445B0B226A03D5400583F15 /* SimilarCollectionViewCell.xib */,
-				8447272F269F225000188360 /* MovieDetailCell */,
-				844D7B79269EAB70005AA532 /* MovieListCell */,
 			);
 			path = CustomCell;
-			sourceTree = "<group>";
-		};
-		8447272F269F225000188360 /* MovieDetailCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MovieDetailCell;
 			sourceTree = "<group>";
 		};
 		844B3DEC26A16B7A00D47DB1 /* Views */ = {
@@ -398,7 +389,6 @@
 				8460D82B26A027DB009BDD85 /* View */,
 				844225DC26A14FF6001B6ED8 /* ViewModel */,
 				844225E626A14FF7001B6ED8 /* Controller */,
-				8460D87426A02838009BDD85 /* Resource */,
 				844D7B48269EAAFE005AA532 /* SceneDelegate.swift */,
 				844D7B4A269EAAFE005AA532 /* ViewController.swift */,
 				844D7B4F269EAB01005AA532 /* Assets.xcassets */,
@@ -423,13 +413,6 @@
 				844D7B6A269EAB02005AA532 /* Info.plist */,
 			);
 			path = MovieBrowserUITests;
-			sourceTree = "<group>";
-		};
-		844D7B79269EAB70005AA532 /* MovieListCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MovieListCell;
 			sourceTree = "<group>";
 		};
 		8460D80E26A027A7009BDD85 /* Helper */ = {
@@ -466,13 +449,6 @@
 				8445B07D26A03C1200583F15 /* Profile.xib */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		8460D87426A02838009BDD85 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
